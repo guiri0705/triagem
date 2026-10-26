@@ -100,6 +100,10 @@ em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-s
 .summary div:last-child{border:0}
 .summary b{font-weight:500;color:var(--ardosia);flex:none}
 .summary span{text-align:right}
+.pic{display:block;height:auto;margin:0 auto 14px;filter:drop-shadow(0 6px 10px rgba(43,45,66,.08))}
+.pic.hero{width:56%;max-width:230px;margin:0 0 14px auto}
+.pic.side{width:34%;max-width:130px;margin:-4px 0 10px auto}
+.pic.wide{width:70%;max-width:260px}
 .brand{font-size:13px;color:var(--ardosia);text-align:center;padding:10px 0 14px}
 .note{font-size:13px;color:var(--ardosia);text-align:center;margin-top:10px;line-height:1.3}
 </style>
@@ -186,6 +190,7 @@ back.onclick = () => { i = hist.pop(); render(); };
 /* ============ TELAS ============ */
 function intro(q, s){
   s.innerHTML = `
+    <img class="pic hero" src="img/sorrindo.webp" alt="Guilherme Costa sorrindo">
     <div class="kicker">Triagem · 2 minutos</div>
     <h1>Vamos nos <em>conhecer</em> antes da avaliação?</h1>
     <p class="sub">São perguntas rápidas, quase tudo é só tocar. Assim eu chego na sua consulta já sabendo o essencial.</p>
@@ -197,6 +202,7 @@ function intro(q, s){
 }
 function contato(q, s){
   s.innerHTML = `
+    <img class="pic side" src="img/prancheta.webp" alt="">
     <h2>Primeiro, <em>quem</em> é você?</h2>
     <p class="hint">Só isso você digita.</p>
     <label class="field"><span>Seu nome</span><input id="nome" autocomplete="name" value="${A.nome||""}"></label>
@@ -235,7 +241,7 @@ function multi(q, s){
 }
 function mark(s,q){ s.querySelectorAll(".opt").forEach(b=>b.classList.toggle("on",A[q.id]===b.dataset.v)); }
 function text(q, s){
-  s.innerHTML = `<h2>${q.title}</h2><p class="hint">${q.hint}</p>
+  s.innerHTML = `<img class="pic side" src="img/duvida.webp" alt=""><h2>${q.title}</h2><p class="hint">${q.hint}</p>
     <label class="field"><textarea id="t" placeholder="Ex.: lesão antiga, rotina de trabalho, o que já tentou…">${A.obs||""}</textarea></label>
     <div class="cta"><button class="btn" id="go">Continuar</button></div>`;
   s.querySelector("#go").onclick = () => { A.obs = s.querySelector("#t").value.trim(); next(); };
@@ -252,6 +258,7 @@ function fim(q, s){
   const rows = Object.keys(LABELS).filter(k => A[k] && A[k].length)
     .map(k => `<div><b>${LABELS[k]}</b><span>${val(A[k])}</span></div>`).join("");
   s.innerHTML = `
+    <img class="pic wide" src="img/whats.webp" alt="">
     <div class="kicker">Tudo pronto</div>
     <h2>Obrigado, <em>${A.nome.split(" ")[0]}</em>!</h2>
     <p class="sub">Confira o resumo. Ao enviar, suas respostas chegam até mim e o WhatsApp abre para você pedir seu agendamento.</p>
