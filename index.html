@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Triagem · Guilherme Costa</title>
 <meta name="description" content="Triagem rápida antes da sua avaliação com Guilherme Costa, treinador.">
-<meta name="theme-color" content="#EAE4D9">
+<meta name="theme-color" content="#3A506B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
 :root{
-  --terracota:#C87D53; --grafite:#2B2D42; --ardosia:#3A506B;
+  --terracota:#C87D53; --grafite:#2B2D42; --ardosia:#3A506B; --chumbo:#1F2D3D;
   --linho:#EAE4D9; --linho-2:#F1EBDD; --ocre:#D49B5A; --azul:#8CA8BA;
-  --bg:var(--linho); --ink:var(--grafite);
+  --bg:var(--ardosia); --ink:var(--linho);
 }
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%}
@@ -35,77 +35,77 @@ body::before{
 }
 header{display:flex;align-items:center;gap:12px;padding:18px 0 10px;min-height:58px}
 .back{
-  width:38px;height:38px;border-radius:50%;border:1.5px solid var(--grafite);background:transparent;
-  color:var(--grafite);font-size:18px;cursor:pointer;display:grid;place-items:center;flex:none;
-  transition:opacity .2s
+  width:38px;height:38px;border-radius:50%;border:1.5px solid var(--linho);background:transparent;
+  color:var(--linho);font-size:18px;cursor:pointer;display:grid;place-items:center;flex:none;
 }
 .back[hidden]{visibility:hidden;display:grid}
-.bar{flex:1;height:4px;border-radius:4px;background:rgba(43,45,66,.12);overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--terracota);border-radius:4px;transition:width .35s ease}
-.step{font-size:13px;color:var(--ardosia);min-width:38px;text-align:right;font-variant-numeric:tabular-nums}
+.bar{flex:1;height:4px;border-radius:4px;background:rgba(234,228,217,.2);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ocre);border-radius:4px;transition:width .35s ease}
+.step{font-size:13px;color:var(--azul);min-width:38px;text-align:right;font-variant-numeric:tabular-nums}
 
 main{flex:1;display:flex;flex-direction:column;padding:14px 0 18px}
 .screen{display:flex;flex-direction:column;flex:1;animation:in .35s ease both}
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ardosia);margin-bottom:12px}
-h1,h2{font-weight:500;letter-spacing:-.035em;line-height:.98}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--azul);margin-bottom:12px}
+h1,h2{font-weight:500;letter-spacing:-.035em;line-height:.98;color:var(--linho-2)}
 h1{font-size:clamp(46px,14vw,64px)}
 h2{font-size:clamp(34px,10vw,44px);margin-bottom:8px}
-em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:1.12em;color:var(--terracota);letter-spacing:-.02em}
-.sub{font-size:17px;line-height:1.25;color:var(--ardosia);margin:10px 0 22px}
-.hint{font-size:14px;color:var(--ardosia);margin-bottom:16px}
+em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:1.12em;color:var(--ocre);letter-spacing:-.02em}
+.sub{font-size:17px;line-height:1.25;color:rgba(234,228,217,.82);margin:10px 0 22px}
+.hint{font-size:14px;color:var(--azul);margin-bottom:16px}
 
 .opts{display:grid;gap:10px}
 .opts.two{grid-template-columns:1fr 1fr}
 .opt{
   display:flex;align-items:center;gap:12px;width:100%;text-align:left;
-  background:var(--linho-2);color:var(--grafite);
-  border:1.5px solid rgba(43,45,66,.22);border-radius:16px;padding:14px 16px;
+  background:rgba(234,228,217,.08);color:var(--linho-2);
+  border:1.5px solid rgba(234,228,217,.28);border-radius:16px;padding:14px 16px;
   font:500 18px/1.1 "Inter Tight",sans-serif;letter-spacing:-.01em;cursor:pointer;
   transition:transform .12s,background .15s,border-color .15s,color .15s;
 }
 .opt .e{font-size:26px;line-height:1;flex:none}
 .opts.two .opt{flex-direction:column;align-items:flex-start;gap:8px;padding:14px}
 .opt:active{transform:scale(.98)}
-.opt.on{background:var(--grafite);border-color:var(--grafite);color:var(--linho-2)}
-.opt.on::after{content:"✓";margin-left:auto;color:var(--ocre);font-weight:600}
+.opt.on{background:var(--linho-2);border-color:var(--linho-2);color:var(--grafite)}
+.opt.on::after{content:"✓";margin-left:auto;color:var(--terracota);font-weight:600}
 .opts.two .opt.on::after{display:none}
 
 .field{display:block;margin-bottom:16px}
-.field span{display:block;font-size:14px;color:var(--ardosia);margin-bottom:6px}
+.field span{display:block;font-size:14px;color:var(--azul);margin-bottom:6px}
 .field input,.field textarea{
-  width:100%;background:var(--linho-2);border:1.5px solid rgba(43,45,66,.22);border-radius:14px;
+  width:100%;background:var(--linho-2);border:1.5px solid transparent;border-radius:14px;
   padding:15px 16px;font:400 19px "Inter Tight",sans-serif;color:var(--grafite);outline:none
 }
-.field input:focus,.field textarea:focus{border-color:var(--terracota)}
+.field input:focus,.field textarea:focus{border-color:var(--ocre)}
 .field textarea{resize:none;min-height:96px}
 
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.3;color:var(--ardosia);margin:6px 0 0;cursor:pointer}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.3;color:rgba(234,228,217,.82);margin:6px 0 0;cursor:pointer}
 .consent input{width:22px;height:22px;accent-color:var(--terracota);flex:none;margin-top:1px}
 
 .cta{margin-top:auto;padding-top:22px}
 .btn{
-  width:100%;border:0;border-radius:999px;padding:18px 24px;cursor:pointer;
-  background:var(--terracota);color:var(--linho-2);
-  font:500 19px "Inter Tight",sans-serif;letter-spacing:-.01em;
+  display:block;width:100%;border:0;border-radius:999px;padding:18px 24px;cursor:pointer;
+  background:var(--terracota);color:var(--chumbo);
+  font:600 19px "Inter Tight",sans-serif;letter-spacing:-.01em;
   transition:transform .12s,opacity .2s;
 }
 .btn:active{transform:scale(.98)}
-.btn:disabled{opacity:.35;cursor:not-allowed}
-.btn.wa{background:var(--grafite)}
-.skip{display:block;margin:12px auto 0;background:none;border:0;color:var(--ardosia);font:400 15px "Inter Tight";text-decoration:underline;cursor:pointer}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.wa{background:var(--linho-2);color:var(--grafite)}
+.btn.ghost{background:transparent;color:var(--linho-2);border:1.5px solid rgba(234,228,217,.45);margin-top:12px;font-weight:500}
+.skip{display:block;margin:12px auto 0;background:none;border:0;color:var(--azul);font:400 15px "Inter Tight";text-decoration:underline;cursor:pointer}
 
-.summary{background:var(--linho-2);border-radius:18px;padding:6px 16px;margin:6px 0 4px;font-size:15px}
+.summary{background:var(--linho-2);color:var(--grafite);border-radius:18px;padding:6px 16px;margin:6px 0 4px;font-size:15px}
 .summary div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid rgba(43,45,66,.1)}
 .summary div:last-child{border:0}
 .summary b{font-weight:500;color:var(--ardosia);flex:none}
 .summary span{text-align:right}
-.pic{display:block;height:auto;margin:0 auto 14px;filter:drop-shadow(0 6px 10px rgba(43,45,66,.08))}
+.brand{font-size:13px;color:var(--azul);text-align:center;padding:10px 0 14px}
+.note{font-size:13px;color:var(--azul);text-align:center;margin-top:10px;line-height:1.3}
+.pic{display:block;height:auto;margin:0 auto 14px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.18))}
 .pic.hero{width:56%;max-width:230px;margin:0 0 14px auto}
 .pic.side{width:34%;max-width:130px;margin:-4px 0 10px auto}
 .pic.wide{width:70%;max-width:260px}
-.brand{font-size:13px;color:var(--ardosia);text-align:center;padding:10px 0 14px}
-.note{font-size:13px;color:var(--ardosia);text-align:center;margin-top:10px;line-height:1.3}
 </style>
 </head>
 <body>
@@ -136,15 +136,15 @@ const Q = [
   { id:"idade", type:"single", cols:2, title:"Qual a sua <em>idade</em>?", opts:[
     ["🌱","Até 17"],["⚡","18 a 29"],["🔥","30 a 39"],["💪","40 a 49"],["🌿","50 a 59"],["🌳","60 ou mais"]]},
   { id:"sexo", type:"single", title:"Como você se <em>identifica</em>?", hint:"Ajuda a ajustar a avaliação.", opts:[
-    ["🙋‍♀️","Feminino"],["🙋‍♂️","Masculino"],["🤝","Prefiro não dizer"]]},
+    ["🙋‍♀️","Feminino"],["🙋‍♂️","Masculino"],["🌈","Outros"],["🤝","Prefiro não dizer"]]},
   { id:"objetivo", type:"multi", title:"Qual o seu <em>objetivo</em>?", hint:"Pode marcar mais de um.", opts:[
     ["🔥","Emagrecer"],["💪","Ganhar massa muscular"],["❤️","Saúde e longevidade"],["🩹","Aliviar dores / reabilitação"],["🏃","Condicionamento físico"],["🧘","Bem-estar e menos estresse"]]},
-  { id:"motivo", type:"single", title:"O que fez você <em>buscar agora</em>?", opts:[
+  { id:"motivo", type:"single", title:"O que fez você <em>nos procurar</em>?", opts:[
     ["🩺","Orientação médica"],["🪞","Autoestima"],["😮‍💨","Cansaço e falta de disposição"],["📅","Evento ou meta com data"],["🛋️","Cansei do sedentarismo"],["✨","Outro motivo"]]},
   { id:"nivel", type:"single", title:"Como está sua <em>rotina</em> de atividade?", opts:[
     ["🛋️","Sedentário(a)"],["🚶","1 a 2x por semana"],["🏋️","3 a 4x por semana"],["🏆","5x ou mais"]]},
-  { id:"experiencia", type:"single", title:"Já treinou com <em>acompanhamento</em>?", opts:[
-    ["✅","Sim, com personal"],["🏢","Só em academia, por conta"],["🆕","Nunca treinei"]]},
+  { id:"experiencia", type:"multi", title:"Que <em>exercícios</em> você já praticou?", hint:"Pode marcar mais de um.", exclusive:"Nunca treinei", opts:[
+    ["✅","Treinei com personal"],["🏢","Academia, por conta própria"],["🚶","Caminhada / corrida"],["⚽","Outro esporte (futebol, vôlei…)"],["🥋","Lutas / artes marciais"],["🧘","Pilates / yoga / dança"],["🏊","Natação / ciclismo"],["🆕","Nunca treinei"]]},
   { id:"doencas", type:"multi", title:"Tem alguma <em>condição</em> de saúde?", hint:"Pode marcar mais de uma.", exclusive:"Nenhuma", opts:[
     ["🙌","Nenhuma"],["🩸","Pressão alta"],["🍬","Diabetes"],["🧈","Colesterol / triglicerídeos"],["🫀","Doença cardíaca"],["🦋","Tireoide"],["🫁","Asma / respiratória"],["🦴","Osteoporose / artrose"],["➕","Outra"]]},
   { id:"medicamento", type:"single", title:"Usa <em>medicamento</em> contínuo?", cond:a=>a.doencas&&!a.doencas.includes("Nenhuma"), opts:[
@@ -153,16 +153,17 @@ const Q = [
     ["🙌","Nenhuma"],["🔙","Coluna / lombar"],["🦵","Joelho"],["💢","Ombro"],["🦶","Quadril / tornozelo / pé"],["🏥","Cirurgia recente"],["➕","Outra"]]},
   { id:"exames", type:"multi", title:"Tem <em>exames</em> recentes?", hint:"Feitos no último ano. Você envia pelo WhatsApp depois.", exclusive:"Não tenho", opts:[
     ["🩸","Exame de sangue"],["📈","Eletro / teste ergométrico"],["🫀","Ecocardiograma"],["⚖️","Bioimpedância / DEXA"],["🤷","Não tenho"]]},
-  { id:"dias", type:"single", title:"Quantos dias <em>por semana</em> consegue treinar?", opts:[
+  { id:"dias", type:"single", title:"Quantos dias por semana você <em>consegue ou pretende</em> treinar?", opts:[
     ["2️⃣","2 dias"],["3️⃣","3 dias"],["4️⃣","4 dias"],["5️⃣","5 dias ou mais"]]},
   { id:"local", type:"single", title:"Onde prefere <em>treinar</em>?", opts:[
     ["🏋️","Academia"],["🏠","Em casa"],["🌳","Ao ar livre"],["🔀","Tanto faz"]]},
-  { id:"obs", type:"text", title:"Quer me contar mais <em>alguma coisa</em>?", hint:"Opcional. Se preferir, pule.", }
-  ,{ id:"fim", type:"fim" }
+  { id:"obs", type:"text", title:"Quer me contar mais <em>alguma coisa</em>?", hint:"Opcional. Se preferir, pule." },
+  { id:"fim", type:"fim" }
 ];
 
 /* ============ ESTADO ============ */
 const A = {};            // respostas
+const LEAD_ID = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 let i = 0;               // índice atual
 const hist = [];         // pilha para o botão voltar
 const $ = s => document.querySelector(s);
@@ -191,27 +192,36 @@ back.onclick = () => { i = hist.pop(); render(); };
 function intro(q, s){
   s.innerHTML = `
     <img class="pic hero" src="img/sorrindo.webp" alt="Guilherme Costa sorrindo">
-    <div class="kicker">Triagem · 2 minutos</div>
-    <h1>Vamos nos <em>conhecer</em> antes da avaliação?</h1>
-    <p class="sub">São perguntas rápidas, quase tudo é só tocar. Assim eu chego na sua consulta já sabendo o essencial.</p>
-    <label class="consent"><input type="checkbox" id="ok"> <span>Concordo em compartilhar estas informações de saúde para fins de avaliação, conforme a LGPD. Os dados ficam só comigo.</span></label>
-    <div class="cta"><button class="btn" id="go" disabled>Começar</button></div>`;
-  const ok = s.querySelector("#ok"), go = s.querySelector("#go");
-  ok.onchange = () => go.disabled = !ok.checked;
-  go.onclick = next;
+    <div class="kicker">Bem-vindo(a)</div>
+    <h1>Como você quer <em>começar</em>?</h1>
+    <p class="sub">Faça uma triagem rápida de 2 minutos para eu te conhecer antes da avaliação, ou fale direto comigo se já sabe o que quer.</p>
+    <div class="cta">
+      <button class="btn" id="tri">📝 Fazer a triagem (2 min)</button>
+      <button class="btn ghost" id="zap">💬 Já sei o que quero · ir direto ao WhatsApp</button>
+    </div>`;
+  s.querySelector("#tri").onclick = next;
+  s.querySelector("#zap").onclick = () => {
+    const m = `Olá, ${CONFIG.TREINADOR}! Vim pelo seu Instagram e já sei o que quero. Gostaria de marcar uma consulta. 😊`;
+    location.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(m)}`;
+  };
 }
 function contato(q, s){
   s.innerHTML = `
     <img class="pic side" src="img/prancheta.webp" alt="">
-    <h2>Primeiro, <em>quem</em> é você?</h2>
+    <h2>Primeiro, diga o seu <em>nome</em></h2>
     <p class="hint">Só isso você digita.</p>
     <label class="field"><span>Seu nome</span><input id="nome" autocomplete="name" value="${A.nome||""}"></label>
     <label class="field"><span>Seu WhatsApp (com DDD)</span><input id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" value="${A.tel||""}"></label>
+    <label class="consent"><input type="checkbox" id="ok" ${A.ok?"checked":""}> <span>Concordo em compartilhar meus dados de contato e saúde para fins de avaliação e retorno, conforme a LGPD. Ficam só comigo.</span></label>
     <div class="cta"><button class="btn" id="go" disabled>Continuar</button></div>`;
-  const n = s.querySelector("#nome"), t = s.querySelector("#tel"), go = s.querySelector("#go");
-  const chk = () => go.disabled = !(n.value.trim().length>1 && t.value.replace(/\D/g,"").length>=10);
-  n.oninput = t.oninput = chk; chk();
-  go.onclick = () => { A.nome = n.value.trim(); A.tel = t.value.trim(); next(); };
+  const n = s.querySelector("#nome"), t = s.querySelector("#tel"), ok = s.querySelector("#ok"), go = s.querySelector("#go");
+  const chk = () => go.disabled = !(n.value.trim().length>1 && t.value.replace(/\D/g,"").length>=10 && ok.checked);
+  n.oninput = t.oninput = ok.onchange = chk; chk();
+  go.onclick = () => {
+    A.nome = n.value.trim(); A.tel = t.value.trim(); A.ok = true;
+    salvar("Só contato (não concluiu)");   // guarda o lead mesmo se a pessoa desistir da triagem
+    next();
+  };
 }
 function optHtml(q){ return q.opts.map(([e,l]) => `<button class="opt" data-v="${l}"><span class="e">${e}</span><span>${l}</span></button>`).join(""); }
 function single(q, s){
@@ -221,7 +231,7 @@ function single(q, s){
     A[q.id] = b.dataset.v; s.querySelectorAll(".opt").forEach(x=>x.classList.toggle("on",x===b));
     setTimeout(next, 220);
   });
-  mark(s, q);
+  s.querySelectorAll(".opt").forEach(b=>b.classList.toggle("on",A[q.id]===b.dataset.v));
 }
 function multi(q, s){
   s.innerHTML = `<h2>${q.title}</h2><p class="hint">${q.hint||""}</p>
@@ -239,7 +249,6 @@ function multi(q, s){
   sync();
   go.onclick = () => { A[q.id] = [...sel]; next(); };
 }
-function mark(s,q){ s.querySelectorAll(".opt").forEach(b=>b.classList.toggle("on",A[q.id]===b.dataset.v)); }
 function text(q, s){
   s.innerHTML = `<img class="pic side" src="img/duvida.webp" alt=""><h2>${q.title}</h2><p class="hint">${q.hint}</p>
     <label class="field"><textarea id="t" placeholder="Ex.: lesão antiga, rotina de trabalho, o que já tentou…">${A.obs||""}</textarea></label>
@@ -248,7 +257,7 @@ function text(q, s){
 }
 
 /* ============ ENVIO ============ */
-const LABELS = { idade:"Idade", sexo:"Sexo", objetivo:"Objetivo", motivo:"Motivo", nivel:"Atividade atual", experiencia:"Experiência",
+const LABELS = { idade:"Idade", sexo:"Sexo", objetivo:"Objetivo", motivo:"Motivo", nivel:"Atividade atual", experiencia:"Já praticou",
   doencas:"Condições de saúde", medicamento:"Medicamento contínuo", lesoes:"Dores/lesões", exames:"Exames recentes",
   dias:"Dias/semana", local:"Local de treino", obs:"Observações" };
 const val = v => Array.isArray(v) ? v.join(", ") : v;
@@ -279,17 +288,17 @@ function mensagemWhats(){
   return m;
 }
 
+// Envia (ou atualiza) a linha deste lead na planilha. Mesmo ID = mesma linha.
+function salvar(status){
+  if (!CONFIG.ENDPOINT) return Promise.resolve();
+  return fetch(CONFIG.ENDPOINT, { method:"POST", mode:"no-cors", keepalive:true,
+    headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body: JSON.stringify({ ...A, id:LEAD_ID, status, labels:LABELS, enviadoEm:new Date().toISOString() }) }).catch(()=>{});
+}
+
 async function enviar(){
   const btn = $("#send"); btn.disabled = true; btn.textContent = "Enviando…";
-  if (CONFIG.ENDPOINT){
-    try{
-      await Promise.race([
-        fetch(CONFIG.ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"},
-          body: JSON.stringify({ ...A, labels:LABELS, enviadoEm:new Date().toISOString() }) }),
-        new Promise(r => setTimeout(r, 6000))
-      ]);
-    }catch(e){ /* segue para o WhatsApp mesmo assim */ }
-  }
+  await Promise.race([salvar("Triagem completa"), new Promise(r => setTimeout(r, 6000))]);
   location.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(mensagemWhats())}`;
   btn.disabled = false; btn.textContent = "Abrir WhatsApp novamente 💬";
 }
